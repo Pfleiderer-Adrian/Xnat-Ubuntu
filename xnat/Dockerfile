@@ -19,7 +19,6 @@ ARG SMTP_PASSWORD
 
 ADD make-xnat-config.sh /usr/local/bin/make-xnat-config.sh
 ADD wait-for-postgres.sh /usr/local/bin/wait-for-postgres.sh
-RUN [“chmod”, “+x”, "/usr/local/bin/make-xnat-config.sh"]
 
 RUN apk add --no-cache \
         postgresql-client \
@@ -28,6 +27,7 @@ RUN apk add --no-cache \
 		unzip \
 		chmod \
     && \
+	[“chmod”, “+x”, "/usr/local/bin/make-xnat-config.sh"] && \
     rm -rf $CATALINA_HOME/webapps/* && \
     mkdir -p \
         $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} \
