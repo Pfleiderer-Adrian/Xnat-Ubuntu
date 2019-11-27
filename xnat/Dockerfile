@@ -44,8 +44,6 @@ RUN apk add --no-cache \
 		${XNAT_ROOT}/pipeline/temp \
         ${XNAT_ROOT}/prearchive \
     && \
-    /usr/local/bin/make-xnat-config.sh && \
-    rm /usr/local/bin/make-xnat-config.sh && \
 	cd ${XNAT_HOME}/plugins && \
 	wget https://bitbucket.org/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
@@ -53,6 +51,9 @@ RUN apk add --no-cache \
 	wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar && \
 	cd ${XNAT_ROOT}/pipeline/temp && \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \
+	/usr/local/bin/make-xnat-config.sh && \
+    rm /usr/local/bin/make-xnat-config.sh && \
+	./gradlew && \
     cd $CATALINA_HOME/webapps/ && \
     wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
     cd ${TOMCAT_XNAT_FOLDER} && \
@@ -65,5 +66,3 @@ ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} 
 
 RUN chmod +x /usr/local/bin/wait-for-postgres.sh
 CMD ["wait-for-postgres.sh", "/usr/local/tomcat/bin/catalina.sh", "run"]
-RUN cd ${XNAT_ROOT}/pipeline/temp
-RUN ./gradlew
