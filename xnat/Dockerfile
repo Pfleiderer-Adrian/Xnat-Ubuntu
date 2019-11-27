@@ -53,7 +53,7 @@ RUN apk add --no-cache \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \
 	/usr/local/bin/make-xnat-config.sh && \
     rm /usr/local/bin/make-xnat-config.sh && \
-	cd xnat-pipeline-engine
+	cd xnat-pipeline-engine && \
 	./gradlew && \
     cd $CATALINA_HOME/webapps/ && \
     wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
