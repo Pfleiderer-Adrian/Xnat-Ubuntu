@@ -28,7 +28,6 @@ RUN apk add --no-cache unzip
 RUN apk add --no-cache gradle
 RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN rm -rf $CATALINA_HOME/webapps/*
-RUN mkdir -p
 RUN mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER}
 RUN mkdir -p ${XNAT_HOME}/config
 RUN mkdir -p ${XNAT_HOME}/config/auth
