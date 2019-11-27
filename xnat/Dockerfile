@@ -40,27 +40,27 @@ RUN mkdir -p ${XNAT_ROOT}/ftp
 RUN mkdir -p ${XNAT_ROOT}/pipeline
 RUN mkdir -p ${XNAT_ROOT}/pipeline/temp
 RUN mkdir -p ${XNAT_ROOT}/prearchive
-RUN cd ${XNAT_HOME}/plugins
-RUN wget https://bitbucket.org/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip
-RUN unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip
-RUN rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip
-RUN wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar
-RUN cd ${XNAT_ROOT}/pipeline
-RUN git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git
-RUN pwd
-RUN ls
-RUN chmod +x /usr/local/bin/make-xnat-config.sh
-RUN /usr/local/bin/make-xnat-config.sh
-RUN rm /usr/local/bin/make-xnat-config.sh
-RUN cd ${XNAT_ROOT}/pipeline/xnat-pipeline-engine
-RUN pwd
-RUN ls
-RUN gradlew
-RUN cd $CATALINA_HOME/webapps/
-RUN wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war
-RUN cd ${TOMCAT_XNAT_FOLDER}
-RUN unzip -o ../xnat-web-${XNAT_VER}.war
-RUN rm -f ../xnat-web-${XNAT_VER}.war
+RUN cd ${XNAT_HOME}/plugins \
+	wget https://bitbucket.org/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip \
+	unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip \
+	rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip \
+	wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar \
+	cd ${XNAT_ROOT}/pipeline \
+	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git \
+	pwd \
+	ls \
+	chmod +x /usr/local/bin/make-xnat-config.sh \
+	/usr/local/bin/make-xnat-config.sh \
+	rm /usr/local/bin/make-xnat-config.sh \
+	cd ${XNAT_ROOT}/pipeline/xnat-pipeline-engine \
+	pwd \
+	ls \
+	gradlew \
+	cd $CATALINA_HOME/webapps/ \
+	wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war \
+	cd ${TOMCAT_XNAT_FOLDER} \
+	unzip -o ../xnat-web-${XNAT_VER}.war \
+	rm -f ../xnat-web-${XNAT_VER}.war
 
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
