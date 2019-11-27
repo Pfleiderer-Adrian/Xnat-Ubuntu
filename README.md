@@ -6,4 +6,12 @@ It's a modified dockerized XNAT version form the official XNAT Git-Repo with the
 * installed Docker-Pipeline-Engine
 * fixed Processing URL BUG
 * some spezific Ubuntu changes
+
+# Preconditions
+Ubuntu Server (>18)
+
+## Usage
+* Downloade the installScript.sh file
+* copy the file to your Ubuntu Server
+* execute the file with the Command: sudo bash installScript.sh
  
