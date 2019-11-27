@@ -27,7 +27,7 @@ RUN apk add --no-cache \
 		unzip \
 		chmod \
     && \
-	[“chmod”, “+x”, "/usr/local/bin/make-xnat-config.sh"] && \
+	chmod +x /usr/local/bin/make-xnat-config.sh && \
     rm -rf $CATALINA_HOME/webapps/* && \
     mkdir -p \
         $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} \
