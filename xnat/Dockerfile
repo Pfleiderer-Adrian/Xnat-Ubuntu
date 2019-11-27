@@ -24,6 +24,7 @@ RUN apk add --no-cache \
         postgresql-client \
 		bash git openssh \
         wget \
+		unzip \
     && \
     rm -rf $CATALINA_HOME/webapps/* && \
     mkdir -p \
