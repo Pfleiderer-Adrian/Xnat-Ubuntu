@@ -50,7 +50,7 @@ RUN git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git
 RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN /usr/local/bin/make-xnat-config.sh
 RUN rm /usr/local/bin/make-xnat-config.sh
-RUN cd xnat-pipeline-engine
+RUN cd ${XNAT_ROOT}/pipeline/xnat-pipeline-engine
 RUN pwd
 RUN ls
 RUN gradlew
