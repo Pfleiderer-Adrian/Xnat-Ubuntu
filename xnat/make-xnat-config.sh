@@ -15,8 +15,8 @@ hibernate.cache.use_query_cache=true
 EOF
 fi
 
-if [ ! -f $XNAT_ROOT/pipeline/temp/gradle.properties ]; then
-  cat > $XNAT_ROOT/pipeline/temp/gradle.properties << EOF
+if [ ! -f $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties ]; then
+  cat > $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties << EOF
 xnatUrl=http://oldschool.edu
 siteName=XNAT
 adminEmail=admin@oldschool.edu
