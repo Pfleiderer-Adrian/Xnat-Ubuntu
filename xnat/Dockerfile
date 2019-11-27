@@ -51,7 +51,7 @@ RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN /usr/local/bin/make-xnat-config.sh
 RUN rm /usr/local/bin/make-xnat-config.sh
 RUN cd xnat-pipeline-engine
-RUN ./gradlew
+RUN gradlew
 RUN cd $CATALINA_HOME/webapps/
 RUN wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war
 RUN cd ${TOMCAT_XNAT_FOLDER}
