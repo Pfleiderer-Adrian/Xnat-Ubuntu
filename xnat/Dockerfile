@@ -47,6 +47,8 @@ RUN rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip
 RUN wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar
 RUN cd ${XNAT_ROOT}/pipeline
 RUN git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git
+RUN pwd
+RUN ls
 RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN /usr/local/bin/make-xnat-config.sh
 RUN rm /usr/local/bin/make-xnat-config.sh
