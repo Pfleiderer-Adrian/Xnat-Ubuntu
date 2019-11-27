@@ -12,6 +12,6 @@ Ubuntu Server (>18)
 
 ## Usage
 * Downloade the installScript.sh file
-* copy the file to your Ubuntu Server
+* copy the file to your Ubuntu Server in your root directory (Command: cd /)
 * execute the file with the Command: sudo bash installScript.sh
  
