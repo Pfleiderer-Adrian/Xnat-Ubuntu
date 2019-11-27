@@ -55,7 +55,7 @@ RUN cd ${XNAT_HOME}/plugins && \
 	cd ${XNAT_ROOT}/pipeline/xnat-pipeline-engine && \
 	pwd && \
 	ls && \
-	gradlew && \
+	./gradlew && \
 	cd $CATALINA_HOME/webapps/ && \
 	wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
 	cd ${TOMCAT_XNAT_FOLDER} && \
