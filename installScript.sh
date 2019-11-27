@@ -56,3 +56,4 @@ cd Xnat-Ubuntu
 sudo docker-compose up -d --force-recreate
 apt-get install iptables
 iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 137.250.24.143:8081
+echo
