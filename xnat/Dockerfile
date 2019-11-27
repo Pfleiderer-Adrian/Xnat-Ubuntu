@@ -49,7 +49,6 @@ RUN apk add --no-cache \
 	unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar && \
-	cd ${XNAT_HOME}/config/auth && \
 	cd ${XNAT_ROOT}/pipeline/temp && \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \
     cd $CATALINA_HOME/webapps/ && \
