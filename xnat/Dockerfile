@@ -22,13 +22,13 @@ ADD wait-for-postgres.sh /usr/local/bin/wait-for-postgres.sh
 
 RUN apk add --no-cache \
         postgresql-client \
-		bash git openssh \
+	bash git openssh \
         wget \
-		unzip \
-		gradle \
+	unzip \
+	gradle \
     && \
 	chmod +x /usr/local/bin/make-xnat-config.sh && \
-    rm -rf $CATALINA_HOME/webapps/* && \
+    	rm -rf $CATALINA_HOME/webapps/* && \
     mkdir -p \
         $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} \
         ${XNAT_HOME}/config \
@@ -59,7 +59,7 @@ RUN apk add --no-cache \
 	wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
 	cd ${TOMCAT_XNAT_FOLDER} && \
 	unzip -o ../xnat-web-${XNAT_VER}.war && \
-	rm -f ../xnat-web-${XNAT_VER}.war && \
+	rm -f ../xnat-web-${XNAT_VER}.war
 
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
