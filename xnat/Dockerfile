@@ -25,7 +25,6 @@ RUN apk add --no-cache \
 		bash git openssh \
         wget \
 		unzip \
-		chmod \
     && \
 	chmod +x /usr/local/bin/make-xnat-config.sh && \
     rm -rf $CATALINA_HOME/webapps/* && \
