@@ -7,7 +7,7 @@ It's a modified dockerized XNAT version form the official XNAT Git-Repo with the
 * fixed Processing URL BUG
 * some spezific Ubuntu changes
 
-# Preconditions
+## Preconditions
 Ubuntu Server (>18)
 
 ## Usage
