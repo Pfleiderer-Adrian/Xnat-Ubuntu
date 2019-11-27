@@ -26,7 +26,6 @@ RUN apk add --no-cache bash git openssh
 RUN apk add --no-cache wget
 RUN apk add --no-cache unzip
 RUN apk add --no-cache gradle
-RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN rm -rf $CATALINA_HOME/webapps/*
 RUN mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER}
 RUN mkdir -p ${XNAT_HOME}/config
@@ -48,6 +47,7 @@ RUN rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip
 RUN wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar
 RUN cd ${XNAT_ROOT}/pipeline
 RUN git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git
+RUN chmod +x /usr/local/bin/make-xnat-config.sh
 RUN /usr/local/bin/make-xnat-config.sh
 RUN rm /usr/local/bin/make-xnat-config.sh
 RUN cd xnat-pipeline-engine
