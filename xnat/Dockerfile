@@ -26,6 +26,7 @@ RUN apk add --no-cache \
 		bash git openssh \
         wget \
 		unzip \
+		chmod \
     && \
     rm -rf $CATALINA_HOME/webapps/* && \
     mkdir -p \
