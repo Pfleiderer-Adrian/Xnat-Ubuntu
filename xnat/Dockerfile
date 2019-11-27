@@ -32,7 +32,7 @@ RUN apk add --no-cache \
     mkdir -p \
         $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} \
         ${XNAT_HOME}/config \
-		${XNAT_HOME}/config/auth \
+	${XNAT_HOME}/config/auth \
         ${XNAT_HOME}/logs \
         ${XNAT_HOME}/plugins \
         ${XNAT_HOME}/work \
@@ -41,7 +41,7 @@ RUN apk add --no-cache \
         ${XNAT_ROOT}/cache \
         ${XNAT_ROOT}/ftp \
         ${XNAT_ROOT}/pipeline \
-		${XNAT_ROOT}/pipeline/temp \
+	${XNAT_ROOT}/pipeline/temp \
         ${XNAT_ROOT}/prearchive \
     && \
 	cd ${XNAT_HOME}/plugins && \
@@ -52,15 +52,14 @@ RUN apk add --no-cache \
 	cd ${XNAT_ROOT}/pipeline && \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \
 	/usr/local/bin/make-xnat-config.sh && \
-    rm /usr/local/bin/make-xnat-config.sh && \
+	rm /usr/local/bin/make-xnat-config.sh && \
 	cd xnat-pipeline-engine && \
 	./gradlew && \
-    cd $CATALINA_HOME/webapps/ && \
-    wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
-    cd ${TOMCAT_XNAT_FOLDER} && \
-    unzip -o ../xnat-web-${XNAT_VER}.war && \
-    rm -f ../xnat-web-${XNAT_VER}.war && \
-    apk del wget
+	cd $CATALINA_HOME/webapps/ && \
+	wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
+	cd ${TOMCAT_XNAT_FOLDER} && \
+	unzip -o ../xnat-web-${XNAT_VER}.war && \
+	rm -f ../xnat-web-${XNAT_VER}.war && \
 
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
