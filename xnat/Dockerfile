@@ -19,6 +19,7 @@ ARG SMTP_PASSWORD
 
 ADD make-xnat-config.sh /usr/local/bin/make-xnat-config.sh
 ADD wait-for-postgres.sh /usr/local/bin/wait-for-postgres.sh
+RUN [“chmod”, “+x”, "/usr/local/bin/make-xnat-config.sh"]
 
 RUN apk add --no-cache \
         postgresql-client \
@@ -61,9 +62,7 @@ RUN apk add --no-cache \
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
 
+RUN [“chmod”, “+x”, "wait-for-postgres.sh"]
 CMD ["wait-for-postgres.sh", "/usr/local/tomcat/bin/catalina.sh", "run"]
 RUN cd ${XNAT_ROOT}/pipeline/temp
 RUN ./gradlew
-CMD ["apt-get install iptables"]
-CMD ["iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 137.250.24.143:8081"]
-
