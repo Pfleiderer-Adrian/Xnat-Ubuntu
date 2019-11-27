@@ -20,27 +20,27 @@ ARG SMTP_PASSWORD
 ADD make-xnat-config.sh /usr/local/bin/make-xnat-config.sh
 ADD wait-for-postgres.sh /usr/local/bin/wait-for-postgres.sh
 
-RUN apk add --no-cache postgresql-client
-RUN apk add --no-cache postgresql-client
-RUN apk add --no-cache bash git openssh
-RUN apk add --no-cache wget
-RUN apk add --no-cache unzip
-RUN apk add --no-cache gradle
-RUN rm -rf $CATALINA_HOME/webapps/*
-RUN mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER}
-RUN mkdir -p ${XNAT_HOME}/config
-RUN mkdir -p ${XNAT_HOME}/config/auth
-RUN mkdir -p ${XNAT_HOME}/logs
-RUN mkdir -p ${XNAT_HOME}/plugins
-RUN mkdir -p ${XNAT_HOME}/work
-RUN mkdir -p ${XNAT_ROOT}/archive
-RUN mkdir -p ${XNAT_ROOT}/build
-RUN mkdir -p ${XNAT_ROOT}/cache
-RUN mkdir -p ${XNAT_ROOT}/ftp
-RUN mkdir -p ${XNAT_ROOT}/pipeline
-RUN mkdir -p ${XNAT_ROOT}/pipeline/temp
-RUN mkdir -p ${XNAT_ROOT}/prearchive
-RUN cd ${XNAT_HOME}/plugins && \
+RUN apk add --no-cache postgresql-client && \
+	apk add --no-cache postgresql-client && \
+	apk add --no-cache bash git openssh && \
+	apk add --no-cache wget && \
+	apk add --no-cache unzip && \
+	apk add --no-cache gradle && \
+	rm -rf $CATALINA_HOME/webapps/* && \
+	mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} && \
+	mkdir -p ${XNAT_HOME}/config && \
+	mkdir -p ${XNAT_HOME}/config/auth && \
+	mkdir -p ${XNAT_HOME}/logs && \
+	mkdir -p ${XNAT_HOME}/plugins && \
+	mkdir -p ${XNAT_HOME}/work && \
+	mkdir -p ${XNAT_ROOT}/archive && \
+	mkdir -p ${XNAT_ROOT}/build && \
+	mkdir -p ${XNAT_ROOT}/cache && \
+	mkdir -p ${XNAT_ROOT}/ftp && \
+	mkdir -p ${XNAT_ROOT}/pipeline && \
+	mkdir -p ${XNAT_ROOT}/pipeline/temp && \ 
+	mkdir -p ${XNAT_ROOT}/prearchive && \
+	cd ${XNAT_HOME}/plugins && \
 	wget https://bitbucket.org/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
