@@ -18,5 +18,5 @@ Ubuntu Server (>18)
 * after several minutes look at localhost
  
 ## Necessary Configurations
-* first change your admin password (default credentials: Name: admin, PW: admin)
+* first change your admin password (default credentials -> Name: admin, PW: admin)
 * change processing url to your side url under Administer -> Site Administration -> Pipeline Settings -> Processing Url
