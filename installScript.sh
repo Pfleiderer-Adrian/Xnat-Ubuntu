@@ -55,7 +55,7 @@ sudo git clone https://github.com/XxScottxX/Xnat-Ubuntu.git
 cd Xnat-Ubuntu
 sudo docker-compose build
 apt-get install iptables
-iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1
+iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1:8081
 iptables -P INPUT ACCEPT
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD ACCEPT
