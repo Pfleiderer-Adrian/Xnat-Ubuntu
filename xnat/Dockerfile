@@ -65,3 +65,4 @@ ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} 
 
 RUN chmod +x /usr/local/bin/wait-for-postgres.sh
 CMD ["wait-for-postgres.sh", "/usr/local/tomcat/bin/catalina.sh", "run"]
+VOLUME /Xnat-Ubuntu/sharedData:/data/xnat
