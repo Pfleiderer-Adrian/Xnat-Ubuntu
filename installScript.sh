@@ -53,10 +53,10 @@ echo ---------------------------------------
 cd /
 sudo git clone https://github.com/XxScottxX/Xnat-Ubuntu.git
 cd Xnat-Ubuntu
-sudo docker-compose up -d --force-recreate
+sudo docker-compose build
 apt-get install iptables
-#iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 137.250.24.143:8081
-#iptables -P INPUT ACCEPT
-#iptables -P OUTPUT ACCEPT
-#iptables -P FORWARD ACCEPT
-echo
+iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+reboot
