@@ -28,7 +28,6 @@ RUN apk add --no-cache postgresql-client && \
 	apk add --no-cache gradle && \
 	rm -rf $CATALINA_HOME/webapps/* && \
 	mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} && \
-	mkdir -p ${XNAT_HOME}/config && \
 	mkdir -p ${XNAT_HOME}/config/auth && \
 	mkdir -p ${XNAT_HOME}/logs && \
 	mkdir -p ${XNAT_HOME}/plugins && \
@@ -37,7 +36,6 @@ RUN apk add --no-cache postgresql-client && \
 	mkdir -p ${XNAT_ROOT}/build && \
 	mkdir -p ${XNAT_ROOT}/cache && \
 	mkdir -p ${XNAT_ROOT}/ftp && \
-	mkdir -p ${XNAT_ROOT}/pipeline && \
 	mkdir -p ${XNAT_ROOT}/pipeline/temp && \ 
 	mkdir -p ${XNAT_ROOT}/prearchive && \
 	cd ${XNAT_HOME}/plugins && \
