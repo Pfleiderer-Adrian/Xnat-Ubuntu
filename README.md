@@ -17,6 +17,8 @@ Ubuntu Server (>18)
 * after the Server Reboot execute "cd /Xnat-Ubuntu" and "docker-compose up -d"
 * after several minutes look at localhost
  
-## Configuration
-* first change your admin password (default credentials: Name: admin, PW: admin)
+## Necessary Configurations
+* first change your admin password (default credentials -> Name: admin, PW: admin)
 * change processing url to your side url under Administer -> Site Administration -> Pipeline Settings -> Processing Url
+* change the side url to your side url under Administer -> Site Administration -> Site Setup -> Site Url
+* restart your server and start your service again ("cd /Xnat-Ubuntu" and "docker-compose up -d")
