@@ -36,6 +36,7 @@ RUN	apk add --no-cache postgresql-client && \
 	mkdir -p ${XNAT_ROOT}/build && \
 	mkdir -p ${XNAT_ROOT}/cache && \
 	mkdir -p ${XNAT_ROOT}/ftp && \
+	mkdir -p ${XNAT_ROOT}/sharedData && \
 	mkdir -p ${XNAT_ROOT}/pipeline/temp && \ 
 	mkdir -p ${XNAT_ROOT}/prearchive && \
 	cd ${XNAT_HOME}/plugins && \
@@ -62,6 +63,5 @@ RUN	apk add --no-cache postgresql-client && \
 
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
-VOLUME /data/xnat
 RUN chmod +x /usr/local/bin/wait-for-postgres.sh
 CMD ["wait-for-postgres.sh", "/usr/local/tomcat/bin/catalina.sh", "run"]
