@@ -14,4 +14,6 @@ Ubuntu Server (>18)
 * Download the installScript.sh file
 * copy the file to your Ubuntu Server in your root directory (Command: cd /)
 * execute the file with the Command: sudo bash installScript.sh
+* after the Server Reboot execute "cd /Xnat-Ubuntu" and "docker-compose up -d"
+* after several minutes look at localhost
  
