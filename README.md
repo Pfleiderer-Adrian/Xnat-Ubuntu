@@ -5,7 +5,7 @@ It's a modified dockerized XNAT version form the official XNAT Git-Repo with the
 * installed OHIF Viewer & LDAP Plugin
 * installed Docker-Pipeline-Engine
 * fixed Processing URL BUG
-* some spezific Ubuntu changes
+* some specific Ubuntu changes
 
 ## Preconditions
 Ubuntu Server (>18)
