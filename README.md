@@ -43,4 +43,4 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 
 ## Special mention
 * Sourcefiles from offical XNAT Repo: github.com/NrgXnat/xnat-docker-compose [@johnflavin](http://github.com/johnflavin)
-* Project Supervisor: @muellerdo
+* Project Supervisor: [@muellerdo](http://github.com/muellerdo)
