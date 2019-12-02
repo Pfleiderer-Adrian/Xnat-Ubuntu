@@ -24,3 +24,17 @@ Ubuntu Server (>18)
 * change the side url to your side url under Administer -> Site Administration -> Site Setup -> Site Url
 * stop your docker service and wait until everything is stopped ("cd /Xnat-Ubuntu" and "docker-compose stop"). very importent!
 * restart your server ("reboot") and start your service again ("cd /Xnat-Ubuntu" and "docker-compose up -d")
+
+## Pipeline Configurations
+### Add "Execute Pipeline"-Button on Options Menü in SessionData
+* navigate: Administer -> Data Types -> 
+* choose SessionData Element witch should have Execute option
+* click on the Element and on Edit-Button
+* scroll down to "Available Report Actions"
+* one the last entry in this table write: Name->PipelineScreen_launch_pipeline, Display Name->Build, Secure Access->edit
+* scroll down again and click on the "Submit"-Button
+Now should appear a "Execute Pipeline"-Button when you open a Project with the specific SessionData Element. There you can execute a Pipeline for the Project Data if you have added a Pipeline.
+
+### Add a Pipeline to your XNAT System
+-TODO-
+
