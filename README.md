@@ -27,7 +27,7 @@ Ubuntu Server (>18)
 * restart your server ("reboot") and start your service again ("cd /Xnat-Ubuntu" and "docker-compose up -d")
 
 ## Pipeline Configurations
-### Add "Execute Pipeline"-Button on Options Menü in SessionData
+### Add "Execute Pipeline"-Button on Options Menu in SessionData
 * navigate: Administer -> Data Types -> 
 * choose SessionData Element witch should have Execute option
 * click on the Element and on Edit-Button
