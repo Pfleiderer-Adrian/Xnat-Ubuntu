@@ -1,7 +1,8 @@
 # Xnat-Ubuntu
 It's a modified dockerized XNAT version form the [official dockerized XNAT Git-Repo](http://github.com/NrgXnat/xnat-docker-compose) with the following changes.
 
-* Its modified and optimized for Ubuntu (should now work out of the box)
+* This Xnat is modified and optimized for Ubuntu
+* Simple installation Script (work out of the box)
 * installed OHIF Viewer & LDAP Plugin
 * installed Docker-Pipeline-Engine
 * fixed Processing URL BUG
