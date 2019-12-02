@@ -22,5 +22,5 @@ Ubuntu Server (>18)
 * first change your admin password (default credentials -> Name: admin, PW: admin)
 * change processing url to your side url under Administer -> Site Administration -> Pipeline Settings -> Processing Url
 * change the side url to your side url under Administer -> Site Administration -> Site Setup -> Site Url
-* stop your docker service and wait until everything is stoped ("cd /Xnat-Ubuntu" and "docker-compose stop"). very importent!
+* stop your docker service and wait until everything is stopped ("cd /Xnat-Ubuntu" and "docker-compose stop"). very importent!
 * restart your server ("reboot") and start your service again ("cd /Xnat-Ubuntu" and "docker-compose up -d")
