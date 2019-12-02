@@ -1,5 +1,5 @@
 # Xnat-Ubuntu
-It's a modified dockerized XNAT version form the official XNAT Git-Repo with the following changes.
+It's a modified dockerized XNAT version form the [official XNAT Git-Repo](http://github.com/NrgXnat/xnat-docker-compose) with the following changes.
 
 * Its modified and optimized for Ubuntu (should now work out of the box)
 * installed OHIF Viewer & LDAP Plugin
@@ -42,5 +42,5 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 
 
 ## Special mention
-* Sourcefiles from offical XNAT Repo: github.com/NrgXnat/xnat-docker-compose [@johnflavin](http://github.com/johnflavin)
+* Sourcefiles from offical XNAT Repo: [github.com/NrgXnat/xnat-docker-compose](http://github.com/NrgXnat/xnat-docker-compose)  [@johnflavin](http://github.com/johnflavin)
 * Project Supervisor: [@muellerdo](http://github.com/muellerdo)
