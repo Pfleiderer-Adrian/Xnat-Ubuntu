@@ -39,5 +39,7 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 ### Add a Pipeline to your XNAT System
 -TODO-
 
-### Special mention
+
+
+## Special mention
 Sourcefiles from offical XNAT Repo: github.com/NrgXnat/xnat-docker-compose (Flavin John)
