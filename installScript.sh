@@ -31,10 +31,7 @@ select yn in 'Yes' 'No'; do
 done
 echo install System!
 echo ---------------------------------------
-sleep 5
-echo
-echo
-echo
+sleep 2
 echo
 echo Update System
 echo ---------------------------------------

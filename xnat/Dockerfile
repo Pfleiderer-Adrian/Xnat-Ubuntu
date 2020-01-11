@@ -58,7 +58,7 @@ RUN	apk add --no-cache postgresql-client && \
 	unzip -o ../xnat-web-${XNAT_VER}.war &&\
 	rm -f ../xnat-web-${XNAT_VER}.war
 
-ADD ../PipelineTest ${XNAT_ROOT}/pipeline/catalog/PipelineTest
+ADD PipelineTest ${XNAT_ROOT}/pipeline/catalog/PipelineTest
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
 RUN chmod +x /usr/local/bin/wait-for-postgres.sh
