@@ -1,7 +1,8 @@
 # Xnat-Ubuntu
-It's a modified dockerized XNAT version form the official XNAT Git-Repo with the following changes.
+It's a modified dockerized XNAT version form the [official dockerized XNAT Git-Repo](http://github.com/NrgXnat/xnat-docker-compose) with the following changes.
 
-* Its modified and optimized for Ubuntu (should now work out of the box)
+* This Xnat is modified and optimized for Ubuntu
+* Simple installation Script (work out of the box)
 * installed OHIF Viewer & LDAP Plugin
 * installed Docker-Pipeline-Engine
 * fixed Processing URL BUG
@@ -26,7 +27,7 @@ Ubuntu Server (>18)
 * restart your server ("reboot") and start your service again ("cd /Xnat-Ubuntu" and "docker-compose up -d")
 
 ## Pipeline Configurations
-### Add "Execute Pipeline"-Button on Options Menü in SessionData
+### Add "Execute Pipeline"-Button on Options Menu in SessionData
 * navigate: Administer -> Data Types -> 
 * choose SessionData Element witch should have Execute option
 * click on the Element and on Edit-Button
@@ -39,3 +40,8 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 ### Add a Pipeline to your XNAT System
 -TODO-
 
+
+
+## Special mention
+* Sourcefiles from offical XNAT Repo: [github.com/NrgXnat/xnat-docker-compose](http://github.com/NrgXnat/xnat-docker-compose)  [@johnflavin](http://github.com/johnflavin)
+* Project Supervisor: [@muellerdo](http://github.com/muellerdo)
