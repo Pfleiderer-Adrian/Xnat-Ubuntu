@@ -38,9 +38,11 @@ Ubuntu Server (>18)
 Now should appear a "Execute Pipeline"-Button when you open a Project with the specific SessionData Element. There you can execute a Pipeline for the Project Data if you have added a Pipeline.
 
 ### Add a Pipeline to your XNAT System
--TODO-
-
-
+You can add a Sample Pipeline that is already instlled with this installation.
+* navigate: Administer -> Pipeline -> Add Pipeline
+* choose the path: /data/xnat/pipeline/catalog/SampleHelloWorldPipeline.xml
+* choose a name for the pipeline
+* after confirm your settings you can add this pipeline to your project and test the pipelineengine
 
 ## Special mention
 * Sourcefiles from offical XNAT Repo: [github.com/NrgXnat/xnat-docker-compose](http://github.com/NrgXnat/xnat-docker-compose)  [@johnflavin](http://github.com/johnflavin)
