@@ -41,7 +41,7 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 You can add a Sample Pipeline that is already instlled with this installation.
 * navigate: Administer -> Pipeline -> Add Pipeline
 * choose the path: /data/xnat/pipeline/catalog/SampleHelloWorldPipeline.xml
-* choose a name for the pipeline
+* Importent!! leave the Name Textfield empty. A Bug will accur with you choose a spezific name. 
 * after confirm your settings you can add this pipeline to your project and test the pipelineengine
 
 ## Special mention
