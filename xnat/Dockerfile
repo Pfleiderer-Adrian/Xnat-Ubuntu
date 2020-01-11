@@ -27,6 +27,7 @@ RUN	apk add --no-cache postgresql-client && \
 	apk add --no-cache unzip && \
 	apk add --no-cache gradle && \
 	apk add --no-cache nano && \
+	apk add --no-cache util-linux && \
 	rm -rf $CATALINA_HOME/webapps/* && \
 	mkdir -p $CATALINA_HOME/webapps/${TOMCAT_XNAT_FOLDER} && \
 	mkdir -p ${XNAT_HOME}/config/auth && \

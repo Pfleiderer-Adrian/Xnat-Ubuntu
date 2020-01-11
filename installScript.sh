@@ -29,6 +29,7 @@ select yn in 'Yes' 'No'; do
         No ) exit;;
     esac
 done
+echo
 echo install System!
 echo ---------------------------------------
 sleep 2

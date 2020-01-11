@@ -14,7 +14,7 @@
 	<!--Should be  Name of the pipeline XML file -->
 	<location>/data/xnat/sharedData</location>
 	<!-- Filesystem path to the pipeline XML -->
-	<description>Demo pipeline which test the pipeline engine end rename your scans.</description>
+	<description>Demo pipeline which test the pipeline engine and rename your scans.</description>
 	<documentation>
 	   <authors>
 	   	<author>
@@ -68,7 +68,6 @@
 			</parameter>
 		</input-parameters>
 	</documentation>
-	<xnatInfo appliesTo="xnat:mrSessionData"/>
 	<outputFileNamePrefix>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/SampleHelloWorldPipeline')^</outputFileNamePrefix>
 	<loop id="series" xpath="^/Pipeline/parameters/parameter[name='scanIDs']/values/list^"/>
 	<!-- Description of the Pipeline -->
@@ -112,13 +111,16 @@
 				</argument> 				
 			</resource>
 		</step>
-		<step id="2" description="Rename each File with HelloWorld" continueOnFailure="true">
-						<resource name="mv" location="commandlineTools" >
-				<argument id="source">
-					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/RENAME/',PIPELINE_LOOPON(series))^</value>
+		<step id="2" description="Rename each File with HelloWorld" workdirectory="^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/RENAME/',PIPELINE_LOOPON(series))^" continueOnFailure="true">
+						<resource name="rename" location="PipelineTest" >
+				<argument id="expression">
+					<value>''</value>
 				</argument>
-				<argument id="destination">
-					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/RENAME/',PIPELINE_LOOPON(series)),helloworld^</value>
+				<argument id="replacement">
+					<value>HelloWorld_</value>
+				</argument>
+				<argument id="file">
+					<value>*</value>
 				</argument>
 			</resource>
 		</step>
@@ -131,7 +133,7 @@
 					<value>PUT</value>
 				</argument>
 				<argument id="remote">
-                    <value>^concat('"',/Pipeline/parameters/parameter[name='host']/values/unique/text(),'data/experiments/',/Pipeline/parameters/parameter[name='sessionID']/values/unique/text(),'/scans/',PIPELINE_LOOPON(series),'/resources/RENAME/files?format=DICOM&amp; reference=',/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/RENAME/',PIPELINE_LOOPON(series),'&amp;event_id=',/Pipeline/parameters/parameter[name='workflowid']/values/unique/text(),'"')^</value>
+                    <value>^concat('"',/Pipeline/parameters/parameter[name='host']/values/unique/text(),'data/experiments/',/Pipeline/parameters/parameter[name='sessionID']/values/unique/text(),'/scans/',PIPELINE_LOOPON(series),'/resources/RENAME/files?format=DICOM&amp;reference=',/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/RENAME/',PIPELINE_LOOPON(series),'&amp;event_id=',/Pipeline/parameters/parameter[name='workflowid']/values/unique/text(),'"')^</value>
 				</argument> 			
 			</resource>
 		</step>
@@ -194,7 +196,7 @@
 					<value>^/Pipeline/parameters/parameter[name='mailhost']/values/unique/text()^</value>
 				</argument>
 				<argument id="body">
-					<value>^concat('Dear ',/Pipeline/parameters/parameter[name='userfullname']/values/unique/text(),',&lt;br&gt; &lt;p&gt;', ' NIFTI files have been generated for  ', /Pipeline/parameters/parameter[name='sessionName']/values/unique/text(),'. Details of the session are available &lt;a href="',/Pipeline/parameters/parameter[name='host']/values/unique/text(),'/app/action/DisplayItemAction/search_element/xnat:mrSessionData/search_field/xnat:mrSessionData.ID/search_value/',/Pipeline/parameters/parameter[name='sessionID']/values/unique/text(),'"&gt;', ' here. &lt;/a&gt; &lt;/p&gt;&lt;br&gt;', ' &lt;/p&gt;&lt;br&gt;', '3TMRI-XNAT Team.')^</value>
+					<value>^concat('Dear ',/Pipeline/parameters/parameter[name='userfullname']/values/unique/text(),',&lt;br&gt; &lt;p&gt;', ' HelloWorld files have been generated for  ', /Pipeline/parameters/parameter[name='sessionName']/values/unique/text(),'. Details of the session are available &lt;a href="',/Pipeline/parameters/parameter[name='host']/values/unique/text(),'/app/action/DisplayItemAction/search_element/xnat:mrSessionData/search_field/xnat:mrSessionData.ID/search_value/',/Pipeline/parameters/parameter[name='sessionID']/values/unique/text(),'"&gt;', ' here. &lt;/a&gt; &lt;/p&gt;&lt;br&gt;', ' &lt;/p&gt;&lt;br&gt;', '3TMRI-XNAT Team.')^</value>
 				</argument>
 			</resource>
 		</step>
