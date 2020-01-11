@@ -46,14 +46,10 @@ RUN	apk add --no-cache postgresql-client && \
 	wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar && \
 	cd ${XNAT_ROOT}/pipeline && \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \
-	pwd && \
-	ls && \
 	chmod +x /usr/local/bin/make-xnat-config.sh && \
 	/usr/local/bin/make-xnat-config.sh && \
 	rm /usr/local/bin/make-xnat-config.sh && \
 	cd ${XNAT_ROOT}/pipeline/xnat-pipeline-engine && \
-	pwd && \
-	ls && \
 	./gradlew && \
 	cd $CATALINA_HOME/webapps/ && \
 	wget https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war && \
@@ -61,6 +57,7 @@ RUN	apk add --no-cache postgresql-client && \
 	unzip -o ../xnat-web-${XNAT_VER}.war &&\
 	rm -f ../xnat-web-${XNAT_VER}.war
 
+ADD ../PipelineTest ${XNAT_ROOT}/pipeline/catalog/PipelineTest
 EXPOSE 8080
 ENV XNAT_HOME=${XNAT_HOME} XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME} XNAT_ROOT=${XNAT_ROOT}
 RUN chmod +x /usr/local/bin/wait-for-postgres.sh
