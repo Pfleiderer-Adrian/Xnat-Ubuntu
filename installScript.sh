@@ -8,13 +8,17 @@ echo
 echo This script installs:
 echo
 echo '-----> XNAT v.1.7'
+echo '-----> Tomcat Websever'
+echo '-----> Plugins & Pipelines'
+echo '-----> Pipeline Engine'
+echo '-----> nrgix Proxy'
 echo '-----> Xnat-Ubuntu'
 echo '-----> Docker'
 echo '-----> GIT'
 echo '-----> JAVA'
 echo
 echo Please check:
-echo 1. you run this script on Ubuntu v.18 or bigger
+echo 1. you run this script on Ubuntu v.18 '(minimal)' or bigger
 echo 2. you have internet
 echo 3. you have sudo privileges
 echo
