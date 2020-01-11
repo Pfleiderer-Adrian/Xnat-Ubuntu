@@ -60,13 +60,6 @@
 				<description>Subject identifier</description>
 			</parameter>
 			<parameter>
-				<name>compress</name>
-				<values>
-					<csv>y</csv>
-				</values>
-					<description>gz compress images [y=pigz (parallel implementation of gzip), i=internal (baseline gzip), n=no (uncompressed)]</description>
-			</parameter>
-			<parameter>
 				<name>notify</name>
 				<values>
 					<csv>1</csv>
