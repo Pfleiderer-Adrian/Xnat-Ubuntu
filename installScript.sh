@@ -44,7 +44,7 @@ echo
 echo Install Java
 echo ---------------------------------------
 sleep 5
-apt-get install default-jdk
+sudo apt install openjdk-8-jdk
 apt-get install nano
 echo
 echo Install Docker
@@ -69,8 +69,9 @@ cd /
 sudo git clone https://github.com/XxScottxX/Xnat-Ubuntu.git
 cd Xnat-Ubuntu
 sudo docker-compose up -d
-apt-get install iptables
-iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1:8081
-iptables -P INPUT ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -P FORWARD ACCEPT
+
+#apt-get install iptables
+#iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1:8081
+#iptables -P INPUT ACCEPT
+#iptables -P OUTPUT ACCEPT
+#iptables -P FORWARD ACCEPT
