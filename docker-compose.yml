@@ -26,6 +26,8 @@ services:
     volumes:
       - /Xnat-Ubuntu/sharedData:/data/xnat/sharedData
       - /var/run/docker.sock:/var/run/docker.sock
+      - /data/xnat/archive:/data/xnat/archive
+      - /data/xnat/build:/data/xnat/build
     depends_on:
       - xnat-db
     environment:

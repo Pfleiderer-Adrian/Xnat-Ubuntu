@@ -45,6 +45,7 @@ RUN	apk add --no-cache postgresql-client && \
 	wget https://bitbucket.org/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	unzip -o ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
 	rm ohif-viewer-plugin-2.0.0-bundle-XNAT-1.7.4.1.zip && \
+	wget "https://github.com/NrgXnat/container-service/releases/download/2.0.1/containers-2.0.1-fat.jar" && \
 	wget https://bitbucket.org/xnatx/ldap-auth-plugin/downloads/xnat-ldap-auth-plugin-1.0.0.jar && \
 	cd ${XNAT_ROOT}/pipeline && \
 	git clone https://www.github.com/nrgXnat/xnat-pipeline-engine.git && \

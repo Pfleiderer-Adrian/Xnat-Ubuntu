@@ -65,6 +65,8 @@ echo
 echo Install XNAT
 echo ---------------------------------------
 sleep 5
+mkdir -p /data/xnat/archive
+mkdir -p /data/xnat/build
 cd /
 sudo git clone https://github.com/XxScottxX/Xnat-Ubuntu.git
 cd Xnat-Ubuntu
