@@ -17,7 +17,7 @@ fi
 
 if [ ! -f $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties ]; then
   cat > $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties << EOF
-xnatUrl=http://oldschool.edu
+xnatUrl=http://localhost
 siteName=XNAT
 adminEmail=admin@oldschool.edu
 smtpServer=mail.oldschool.edu
