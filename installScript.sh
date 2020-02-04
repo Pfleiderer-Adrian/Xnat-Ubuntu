@@ -76,6 +76,7 @@ sudo docker-compose up -d
 chmod +x RESTApiTest/APItest.sh
 chmod +x RESTApiTest/APItest_multifiles.sh
 
+#workaround if processing url is not found
 #apt-get install iptables
 #iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 127.0.0.1:8081
 #iptables -P INPUT ACCEPT

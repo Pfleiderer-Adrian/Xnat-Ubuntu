@@ -15,6 +15,7 @@ hibernate.cache.use_query_cache=true
 EOF
 fi
 
+# generate pipeline-engine config
 if [ ! -f $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties ]; then
   cat > $XNAT_ROOT/pipeline/xnat-pipeline-engine/gradle.properties << EOF
 xnatUrl=http://localhost
@@ -25,6 +26,7 @@ destination=/data/xnat/pipeline
 EOF
 fi
 
+# generate ldap config
 if [ ! -f $XNAT_HOME/config/auth/ldap-provider.properties ]; then
   cat > $XNAT_HOME/config/auth/ldap-provider.properties << EOF
 name=LDAP
@@ -38,6 +40,7 @@ search.filter=(sAMAccountName=mustermann)
 EOF
 fi
 
+# generate administer config
 if [ ! -f $XNAT_HOME/config/auth/local-provider.properties ]; then
   cat > $XNAT_HOME/config/auth/local-provider.properties << EOF
 provider.db.name=LOCAL
@@ -46,6 +49,7 @@ provider.db.type=db
 EOF
 fi
 
+# generate local db config
 if [ ! -f $XNAT_HOME/config/prefs-init.ini ]; then
   cat > $XNAT_HOME/config/prefs-init.ini << EOF
 [siteConfig]

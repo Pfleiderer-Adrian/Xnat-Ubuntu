@@ -2,13 +2,13 @@
 It's a modified dockerized XNAT version form the [official dockerized XNAT Git-Repo](http://github.com/NrgXnat/xnat-docker-compose) with the following changes.
 
 * This Xnat is modified and optimized for Ubuntu
-* Simple installation Script (work out of the box)
+* simple installation Script (work out of the box)
 * installed OHIF Viewer & LDAP Plugin
 * installed Docker-Pipeline-Engine
 * installed Container Plugin + Workaround
 * fixed Processing URL BUG
 * some specific Ubuntu changes
-* APItest Skript and Testpipeline
+* APItest Script and TestPipeline
 
 ## Preconditions
 Ubuntu Server (>18)
@@ -17,7 +17,7 @@ Ubuntu Server (>18)
 * Download the installScript.sh file
 * copy the file to your Ubuntu Server in your root directory (Command: cd /)
 * execute the file with the Command: sudo bash installScript.sh
-* after the installation and several minutes to take the side up look at localhost or your URL
+* after the installation and several minutes to look at your URL
 * now make the necessary configuration (processing url & admin password change)
  
 ## Necessary Configurations
@@ -39,7 +39,7 @@ Now should appear a "Execute Pipeline"-Button when you open a Project with the s
 ### Add a Pipeline to your XNAT System
 You can add a Sample Pipeline that is already instlled with this installation.
 * navigate: Administer -> Pipeline -> Add Pipeline
-* choose the path: /data/xnat/pipeline/catalog/SampleHelloWorldPipeline.xml
+* choose the path: /data/xnat/pipeline/catalog/PipelineTest/SampleHelloWorldPipeline.xml
 * Importent!! leave the Name Textfield empty. A Bug will accur with you choose a spezific name. 
 * after confirm your settings you can add this pipeline to your project and test the pipelineengine
 
