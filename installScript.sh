@@ -34,6 +34,7 @@ done
 echo
 echo install System!
 echo ---------------------------------------
+cd /
 sleep 2
 echo
 echo Update System
