@@ -38,6 +38,8 @@ services:
     build: ./postgres
     expose:
       - "5432"
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
 
@@ -49,4 +51,3 @@ services:
       - "80"
     links:
       - xnat-web
-
