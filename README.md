@@ -10,6 +10,11 @@ It's a modified dockerized XNAT version form the [official dockerized XNAT Git-R
 * some specific Ubuntu changes
 * APItest Script and TestPipeline
 
+## System Overview
+A short environment overview with the diverent docker container and subsystems.
+
+<img src="Images/ProjectOverviewXNAT.jpg" alt="HTML ERROR" width="500" height="300">
+
 ## Preconditions
 Ubuntu Server (>18)
 
@@ -25,6 +30,11 @@ Ubuntu Server (>18)
 * change processing url to your side url under Administer -> Site Administration -> Pipeline Settings -> Processing Url
 * change the side url to your side url under Administer -> Site Administration -> Site Setup -> Site Url
 
+## Folder Overview
+A short overview of the XNAT folderstructure after a succesful installation.
+
+<img src="Images/dirsXNAT.jpg" alt="HTML ERROR" width="450" height="300">
+
 ## Pipeline Configurations
 ### Add "Execute Pipeline"-Button on Options Menu in SessionData
 * navigate: Administer -> Data Types -> 
@@ -37,11 +47,17 @@ Ubuntu Server (>18)
 Now should appear a "Execute Pipeline"-Button when you open a Project with the specific SessionData Element. There you can execute a Pipeline for the Project Data if you have added a Pipeline.
 
 ### Add a Pipeline to your XNAT System
-You can add a Sample Pipeline that is already instlled with this installation.
+You can add a Sample Pipeline that is already installed with this installation.
 * navigate: Administer -> Pipeline -> Add Pipeline
 * choose the path: /data/xnat/pipeline/catalog/PipelineTest/SampleHelloWorldPipeline.xml
 * Importend!! leave the Name Textfield empty. A Bug will accur with you choose a spezific name. 
 * after confirm your settings you can add this pipeline to your project and test the pipelineengine
+
+### Container Service
+With this installation you can also add docker container as pipelines. Here a short example how it works with a external docker environment.
+
+<img src="Images/ContainerServiceXNAT.jpg" alt="HTML ERROR" width="500" height="300">
+
 
 ## Special mention
 * Sourcefiles from offical XNAT Repo: [github.com/NrgXnat/xnat-docker-compose](http://github.com/NrgXnat/xnat-docker-compose)  [@johnflavin](http://github.com/johnflavin)
